@@ -32,8 +32,8 @@
                 </form>
                 <div>
                     <ul >
-                        <li v-for="element in listItem" :class="{line : element.done === true }">
-                         {{element.text}}<i class="fa-solid fa-xmark" @click=""></i>
+                        <li v-for="(element, index) in listItem" :class="{line : element.done === true }">
+                         {{element.text}}<i class="fa-solid fa-xmark" @click="spliceItem(index)"></i>
                         </li>
                     </ul>
                 </div>

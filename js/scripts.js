@@ -19,6 +19,11 @@ createApp({
             this.listItem.push(userList);                   
             this.item = '';
         },
-    },
+    
+
+        spliceItem(index){
+            this.listItem.splice(index, 1);
+        },
+    },    
 
 }).mount("#app");
