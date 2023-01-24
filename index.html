@@ -25,9 +25,21 @@
     <body>
 
         <div id="app">
+            <div >
+                <form @submit.prevent="createItem">
+                    <input type="text" v-model="item">
+                    <button type="submit">invia</button>
+                </form>
+                <div>
+                    <ul >
+                        <li v-for="element in listItem" :class="{line : element.done === true }">
+                         {{element.text}}<i class="fa-solid fa-xmark" @click=""></i>
+                        </li>
+                    </ul>
+                </div>
+             </div>
 
         </div>
-
 
 
         <script src="js/scripts.js"></script>
