@@ -25,22 +25,30 @@
     <body>
 
         <div id="app">
-            <div >
-                <form @submit.prevent="createItem">
-                    <input type="text" v-model="item">
-                    <button type="submit">invia</button>
-                </form>
-                <div>
-                    <ul >
-                        <li v-for="(element, index) in listItem">
+            <div  class="container d-flex justify-content-center align-items-center">
+                <div class="box d-flex flex-column">
+                    <div>
+                         <img src="img/logo.png" alt="">
+                    </div>
 
-                            <p @click="invertDone(element)" :class="{line : element.done === true }">
-                                {{element.text}}
-                            </p>
-                            <i class="fa-solid fa-xmark" @click="spliceItem(index)"></i>
-                            
-                        </li>
-                    </ul>
+                    <div class="form-list">
+                        <form @submit.prevent="createItem">
+                            <input type="text" v-model="item"  minlength="3" required placeholder="Inserisci testo">
+                            <button class="my-btn" type="submit">invia</button>
+                        </form>
+                    </div>
+
+                    <div class="list d-flex justify-content-center">
+                        <ul >
+                            <li v-for="(element, index) in listItem"  >
+                                <p 
+                                    @click="invertDone(element)" :class="{line : element.done === true } ">
+                                    {{element.text}}
+                                </p>
+                                <i class="fa-solid fa-xmark" @click="spliceItem(index)"></i>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
              </div>
 
